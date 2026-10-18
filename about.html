@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="About this small corner of the web." />
+    <title>About — Hello, World!</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap");
+      :root { --ink:#10151f; --paper:#f4f0e8; --orange:#ee6a3a; --gold:#f8c64e; --blue:#2e6fbb; }
+      * { box-sizing:border-box; }
+      body { min-height:100vh; margin:0; color:var(--ink); background:var(--paper); font-family:"DM Mono", monospace; }
+      main { position:relative; display:grid; place-items:center; min-height:100vh; padding:2rem; overflow:hidden; isolation:isolate; }
+      .orb { position:absolute; z-index:-1; border-radius:50%; animation:drift 9s ease-in-out infinite alternate; }
+      .orb--one { top:-18vh; right:-9vw; width:min(53vw,650px); aspect-ratio:1; background:var(--gold); }
+      .orb--two { bottom:-25vh; left:-8vw; width:min(49vw,610px); aspect-ratio:1; background:var(--blue); animation-delay:-4s; }
+      .card { width:min(100%,780px); padding:clamp(2rem,7vw,5.5rem); background:rgba(255,253,248,.76); border:1px solid rgba(16,21,31,.18); box-shadow:14px 14px 0 var(--ink),0 28px 60px rgba(16,21,31,.18); backdrop-filter:blur(10px); animation:arrive .8s cubic-bezier(.2,.8,.2,1) both; }
+      .eyebrow { display:flex; gap:.8rem; align-items:center; margin:0 0 1.6rem; font-size:.75rem; letter-spacing:.14em; text-transform:uppercase; }
+      .eyebrow::before { width:2.5rem; height:2px; content:""; background:var(--orange); }
+      h1 { margin:0; font-family:"Playfair Display",Georgia,serif; font-size:clamp(3.8rem,10vw,7rem); letter-spacing:-.07em; line-height:.9; }
+      h1 em { color:var(--orange); font-weight:600; }
+      .copy { max-width:39rem; margin:2rem 0 0; font-size:clamp(.88rem,2vw,1rem); line-height:1.8; }
+      .copy p { margin:0 0 1.2rem; }
+      nav { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:2.5rem; }
+      nav a { padding:.75rem 1rem; color:var(--ink); border:1px solid var(--ink); text-decoration:none; font-size:.75rem; letter-spacing:.07em; text-transform:uppercase; transition:.2s ease; }
+      nav a:hover, nav a:focus-visible, nav a[aria-current="page"] { color:var(--paper); background:var(--ink); transform:translateY(-2px); }
+      @keyframes arrive { from { opacity:0; transform:translateY(24px) rotate(-1deg); } to { opacity:1; transform:translateY(0); } }
+      @keyframes drift { to { transform:translate(2vw,3vh) rotate(12deg); } }
+      @media (max-width:560px) { .card { box-shadow:9px 9px 0 var(--ink),0 20px 40px rgba(16,21,31,.15); } }
+      @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="orb orb--one" aria-hidden="true"></div>
+      <div class="orb orb--two" aria-hidden="true"></div>
+      <section class="card" aria-labelledby="about-heading">
+        <p class="eyebrow">The short version</p>
+        <h1 id="about-heading">Made for<br /><em>curiosity.</em></h1>
+        <div class="copy">
+          <p>This is a tiny place on the web with a big welcome. It began with two simple words and a belief that even a first page can feel personal.</p>
+          <p>Consider this an invitation to explore, make something, and see where a small beginning leads.</p>
+        </div>
+        <nav aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html" aria-current="page">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </section>
+    </main>
+  </body>
+</html>

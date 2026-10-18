@@ -143,6 +143,29 @@
         line-height: 1.75;
       }
 
+      .nav {
+        display: flex;
+        gap: .5rem;
+        margin: 2rem 0 0;
+      }
+
+      .nav a {
+        padding: .75rem 1rem;
+        color: var(--ink);
+        border: 1px solid var(--ink);
+        text-decoration: none;
+        font-size: .75rem;
+        letter-spacing: .07em;
+        text-transform: uppercase;
+        transition: background-color .2s ease, color .2s ease, transform .2s ease;
+      }
+
+      .nav a:hover, .nav a:focus-visible {
+        color: var(--paper);
+        background: var(--ink);
+        transform: translateY(-2px);
+      }
+
       .footer {
         display: flex;
         flex-wrap: wrap;
@@ -192,6 +215,10 @@
         <p class="message">
           The first line of a new idea deserves a little ceremony. Welcome to a bright, curious corner of the web.
         </p>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
         <div class="footer">
           <span>Made with intent</span>
           <span class="spark" aria-label="spark">✦</span>
